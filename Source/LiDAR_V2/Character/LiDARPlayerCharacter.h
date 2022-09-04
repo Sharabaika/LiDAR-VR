@@ -25,7 +25,7 @@ protected:
 	ULiDARMotionControllerComponent* RightMotionController;
 
 	
-public:
+public:	
 	// Lifecycle //
 	// ========= //
 	ALiDARPlayerCharacter(const FObjectInitializer& ObjectInitializer);
@@ -35,6 +35,9 @@ public:
 
 	// Methods //
 	// ======= //
+	UFUNCTION(BlueprintCallable)
+	ULiDARMotionControllerComponent* GetMotionController(ELeftRight WhichHand) const;
+	
 	UPlayerMovementComponent* GetPlayerMovementComponent();
 	APlayerController* GetPlayerController();
 	

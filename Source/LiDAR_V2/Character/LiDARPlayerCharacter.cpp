@@ -33,6 +33,12 @@ void ALiDARPlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	RightMotionController->SetupPlayerInputComponent(PlayerController, PlayerInputComponent, ELeftRight::Right);
 }
 
+ULiDARMotionControllerComponent* ALiDARPlayerCharacter::GetMotionController(ELeftRight WhichHand) const
+{
+	ensure(WhichHand!=ELeftRight::Invalid);
+	return WhichHand == ELeftRight::Left ? LeftMotionController : RightMotionController;
+}
+
 UPlayerMovementComponent* ALiDARPlayerCharacter::GetPlayerMovementComponent()
 {
 	return Cast<UPlayerMovementComponent>(GetCharacterMovement());

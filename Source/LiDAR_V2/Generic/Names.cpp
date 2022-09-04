@@ -12,6 +12,7 @@ DEFINE_NAME_WITH_CATEGORY(InputNames, Turn);
 
 DEFINE_NAME_WITH_CATEGORY(InputNames, GripLeft);
 DEFINE_NAME_WITH_CATEGORY(InputNames, GripRight);
+
 DEFINE_NAME_WITH_CATEGORY(InputNames, TriggerLeft);
 DEFINE_NAME_WITH_CATEGORY(InputNames, TriggerRight);
 

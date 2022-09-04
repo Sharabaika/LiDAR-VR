@@ -13,7 +13,6 @@ namespace InputNames
 
 	DECLARE_NAME(GripLeft);
 	DECLARE_NAME(GripRight);
-	inline extern FName GripNames[]{ GripLeft, GripRight };
 	
 	DECLARE_NAME(TriggerLeft);
 	DECLARE_NAME(TriggerRight);

@@ -25,9 +25,24 @@ class ULiDARMotionControllerComponent : public UMotionControllerComponent
 	// ===== //
 	UPROPERTY()
 	ELeftRight WhichHand;
+
+	UPROPERTY()
+	bool bGripping;
 	
+	UPROPERTY()
+	bool bTriggering;
+
 	
 public:
+	// Accessors //
+	// ========= //
+	UFUNCTION(BlueprintCallable)
+	bool IsGripping() const { return bGripping; }
+
+	UFUNCTION(BlueprintCallable)
+	bool IsTriggering() const { return bTriggering;}
+	
+	
 	// Lifecycle //
 	// ========= //
 	ULiDARMotionControllerComponent(const FObjectInitializer& ObjectInitializer);
