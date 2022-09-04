@@ -18,7 +18,7 @@ class ULiDARMotionControllerComponent : public UMotionControllerComponent
 	// Subobjects //
 	// ========== //
 	UPROPERTY(Transient)
-	UInputComponent* FakeVrInputComponent;
+	UInputComponent* FakeVRControllerInputComponent;
 
 
 	// State //
@@ -27,20 +27,20 @@ class ULiDARMotionControllerComponent : public UMotionControllerComponent
 	ELeftRight WhichHand;
 
 	UPROPERTY()
-	bool bGripping;
+	float GripValue;
 	
 	UPROPERTY()
-	bool bTriggering;
+	float TriggerValue;
 
 	
 public:
 	// Accessors //
 	// ========= //
 	UFUNCTION(BlueprintCallable)
-	bool IsGripping() const { return bGripping; }
+	float GetGripValue() const { return GripValue; }
 
 	UFUNCTION(BlueprintCallable)
-	bool IsTriggering() const { return bTriggering;}
+	float GetTriggerValue() const { return TriggerValue;}
 	
 	
 	// Lifecycle //
@@ -52,17 +52,20 @@ public:
 private:
 	// Input //
 	// ===== //
-	void OnGripPressed();
-	void OnGripReleased();
-
-	void OnTriggerPressed();
-	void OnTriggerReleased();
+	void OnGrip(float Value);
+	void OnTrigger(float Value);
 	
 	
 	// Fake Input //
 	// ---------- //
-	void EnableFakeInput();
-	void DisableFakeInput();
+	void OnFakeTriggerPressed();
+	void OnFakeTriggerReleased();
+	
+	void OnFakeGripPressed();
+	void OnFakeGripReleased();
+	
+	void EnableFakeControllerInput();
+	void DisableFakeControllerInput();
 	
 	void OnFakeX(float Value);
 	void OnFakeY(float Value);
@@ -71,5 +74,6 @@ private:
 
 	// Subroutines //
 	// =========== //
-	bool ShouldRotateFakeInput();
+	bool IsSuitableFakeInputHand() const;
+	bool ShouldRotateFakeInput() const;
 };

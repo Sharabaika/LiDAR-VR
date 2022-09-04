@@ -9,6 +9,7 @@ ALiDARPlayerCharacter::ALiDARPlayerCharacter(const FObjectInitializer& ObjectIni
 	, INIT_COMPONENT(UVRCamera, VRCamera)
 	, INIT_COMPONENT(ULiDARMotionControllerComponent, LeftMotionController)
 	, INIT_COMPONENT(ULiDARMotionControllerComponent, RightMotionController)
+	, INIT_COMPONENT(UPlayerInteractionComponent, PlayerInteractionComponent)
 {
 	VRCamera->SetupAttachment(RootComponent);
 
@@ -31,6 +32,8 @@ void ALiDARPlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	APlayerController* PlayerController = GetPlayerController();
 	LeftMotionController->SetupPlayerInputComponent(PlayerController, PlayerInputComponent, ELeftRight::Left);
 	RightMotionController->SetupPlayerInputComponent(PlayerController, PlayerInputComponent, ELeftRight::Right);
+
+	PlayerInteractionComponent->SetupPlayerInputComponent(PlayerInputComponent);
 }
 
 ULiDARMotionControllerComponent* ALiDARPlayerCharacter::GetMotionController(ELeftRight WhichHand) const

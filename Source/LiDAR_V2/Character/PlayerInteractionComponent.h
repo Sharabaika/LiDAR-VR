@@ -13,9 +13,24 @@ public:
 	// Lifecycle //
 	// ========= //
 	UPlayerInteractionComponent(const FObjectInitializer& ObjectInitializer);
+	void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent);
 
 	
 	// Methods //
 	// ======= //
 	void EquipItem(AInventoryItemBase* InItem);
+
+
+protected:
+	// Input //
+	// ===== //
+	void StartGripLeft();
+	void EndGripLeft();
+	void StartTriggerLeft();
+	void EndTriggerLeft();
+
+	void StartGripRight();
+	void EndGripRight();
+	void StartTriggerRight();
+	void EndTriggerRight();
 };

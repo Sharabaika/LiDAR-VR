@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "CoreMinimal.h"
 #include "LiDARMotionControllerComponent.h"
+#include "PlayerInteractionComponent.h"
 #include "PlayerMovementComponent.h"
 #include "VRCamera.h"
 #include "Camera/CameraComponent.h"
@@ -24,6 +25,8 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	ULiDARMotionControllerComponent* RightMotionController;
 
+	UPROPERTY(EditDefaultsOnly)
+	UPlayerInteractionComponent* PlayerInteractionComponent;
 	
 public:	
 	// Lifecycle //

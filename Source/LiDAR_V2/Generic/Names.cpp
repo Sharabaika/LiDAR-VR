@@ -13,8 +13,14 @@ DEFINE_NAME_WITH_CATEGORY(InputNames, Turn);
 DEFINE_NAME_WITH_CATEGORY(InputNames, GripLeft);
 DEFINE_NAME_WITH_CATEGORY(InputNames, GripRight);
 
+DEFINE_NAME_WITH_CATEGORY(InputNames, GripLeftAxis);
+DEFINE_NAME_WITH_CATEGORY(InputNames, GripRightAxis);
+
 DEFINE_NAME_WITH_CATEGORY(InputNames, TriggerLeft);
 DEFINE_NAME_WITH_CATEGORY(InputNames, TriggerRight);
+
+DEFINE_NAME_WITH_CATEGORY(InputNames, TriggerLeftAxis);
+DEFINE_NAME_WITH_CATEGORY(InputNames, TriggerRightAxis);
 
 
 // Fake input //

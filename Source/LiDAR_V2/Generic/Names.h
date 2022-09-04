@@ -14,10 +14,14 @@ namespace InputNames
 	DECLARE_NAME(GripLeft);
 	DECLARE_NAME(GripRight);
 	
+	DECLARE_NAME(GripLeftAxis);
+	DECLARE_NAME(GripRightAxis);
+	
 	DECLARE_NAME(TriggerLeft);
 	DECLARE_NAME(TriggerRight);
-	inline extern FName TriggerNames[]{ TriggerLeft, TriggerRight };
 
+	DECLARE_NAME(TriggerLeftAxis);
+	DECLARE_NAME(TriggerRightAxis);
 
 	// Fake input //
 	// ========== //
